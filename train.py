@@ -55,7 +55,17 @@ netG.apply(weights_init)
 print(netG)
 
 # Create the discriminator.
-netD = Discriminator(params).to(device)
+netD = Discriminator(
+    image_size = 256,
+    patch_size = 32,
+    num_classes = 1000,
+    dim = 1024,
+    depth = 6,
+    heads = 16,
+    mlp_dim = 2048,
+    dropout = 0.1,
+    emb_dropout = 0.1
+).to(device)
 # Apply the weights_init() function to randomly initialize all
 # weights to mean=0.0, stddev=0.2
 netD.apply(weights_init)
