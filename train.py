@@ -56,9 +56,9 @@ print(netG)
 
 # Create the discriminator.
 netD = Discriminator(
-    image_size = 256,
-    patch_size = 32,
-    num_classes = 1000,
+    image_size = 64,
+    patch_size = 8,
+    num_classes = 2,
     dim = 1024,
     depth = 6,
     heads = 16,
